@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>ARIA Tree Example</title>
+    
+    
+    
+    
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <h1>ARIA Tree Example</h1>
+<p>
+  This page provides an example of an ARIA tree that includes a variety of different ARIA tree functions. It does not provide any meaningful supoprt via the keyboard as this is a <i>materially</i> more complicated undertaking. Instead it focuses on providing
+  a basic understanding of the updatdateable keyboard roles and ways to expose them.
+</p>
+<!-- Create a element for the tree -->
+<h2 id="animals_label">Animals of the World</h1>
+<!-- Host the overall tree in a unordered list -->
+<ul role="tree" aria-labelledby="animals_label">
+  <!-- Host specific items in a list item tagged as a tree item -->
+  <li role="treeitem" class="expandedList"><span onclick="toggleTree(this.parentNode)" onkeypress="toggleTree(this.parentNode)" id="aotw_initial_focus">Jungle Animals</span>
+    <ul>
+      <li role="treeitem">Monkey</li>
+      <li role="treeitem">Tiger</li>
+      <li role="treeitem">Boa</li>
+    </ul>
+  </li>
+  <li role="treeitem" class="collapsedList"><span onclick="toggleTree(this.parentNode)" onkeypress="toggleTree(this.parentNode)">Ocean Animals</span>
+    <ul>
+      <li role="treeitem">Whale</li>
+      <li role="treeitem">Shark</li>
+      <li role="treeitem">Sea Turtle</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>Implementation Details</h2>
+<p>
+  It is intended to demonstrate the following functions:
+  <ul>
+    <li>Set a label for the entire tree.</li>
+    <li>Set role="tree" for the overall tree container.</li>
+    <li>Set role="treeitem" for each tree item.</li>
+    <li>Set aria-expanded for expanded / collapsed state of nodes</li>
+    <li>Set the tree as a single tab stop with the first item receiving keyboard focus</li>
+    <li>Set each node of the tree as focusable but not in tab order (tabindex=-1)</li>
+    <li>Handle keyboard navigation throughout the tree and expand collapse</li>
+    <li>Set role="group" for groups of child nodes [TODO]</li>
+  </ul>
+</p>
+<h2>References</h2>
+<p>
+  It is intended to demonstrate the following functions:
+  <ul>
+    <li><a href='http://accessibleculture.org/articles/2013/02/not-so-simple-aria-tree-views-and-screen-readers/'>(Not so) Simple ARIA Tree Views and Screen Readers</a> - Great overview of how screen readers and ARIA tres </li>
+    <li><a href='http://www.oaa-accessibility.org/examplep/treeview1/'>Example Treeview</a> - An example implementation of a treeview control from the OpenAjax Alliance.</li>
+  </ul>
+</p>
+    
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>

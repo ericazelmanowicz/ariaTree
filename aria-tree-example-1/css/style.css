@@ -1,0 +1,32 @@
+/* Show and hide the CSS */
+
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+li {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+/* The collapse state CSS psuedo before element */
+
+li.collapsedList:before {
+  content: "+";
+  padding-right: 5px;
+}
+/* The expanded state CSS psuedo before element */
+
+li.expandedList:before {
+  content: "-";
+  padding-right: 5px;
+}
+
+li.collapsedList ul {
+  display: none;
+}
+
+li.expandedList ul {
+  display: block;
+}
